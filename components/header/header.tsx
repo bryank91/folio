@@ -1,26 +1,26 @@
-import { Toolbar, Button, Grid } from "@mui/material";
+import { Button, Grid, Typography, AppBar } from "@mui/material";
 import React from "react";
 
 export default function Header() {
     const buttonLinks = (name : string, link : string) => {
         return(
             <Button color="inherit" href={link}>
-                {name}
+                <Typography variant="subtitle2">{name}</Typography>
             </Button>
         )
     }
 
     const display = () => {
         return (    
-            <Toolbar>
-            <Grid justifyContent='space-between' container>    
-                <div>
-                    {buttonLinks("home","/")}
-                    {buttonLinks("portfolio","/portfolio")}
-                    {buttonLinks("contact","/contact")}
-                </div>
-            </Grid>
-            </Toolbar>
+            <AppBar>
+                <Grid justifyContent='space-between' container >    
+                    <div style={{width: "100vw", textAlign: "center"}}>
+                        {buttonLinks("home","/")}
+                        {buttonLinks("portfolio","/portfolio")}
+                        {buttonLinks("contact","/contact")}
+                    </div>
+                </Grid>
+            </AppBar>
         )
     }
 

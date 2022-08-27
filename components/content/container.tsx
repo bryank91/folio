@@ -7,16 +7,12 @@ export default function ContentContainer({content} : any) {
     return (
         <Box sx={{  
             backgroundColor: 'white', 
-            height: '100vh', 
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center',
-            border: '2px solid grey'        
+            alignItems: 'center',                                      
         }}>
-            <Header />
-            {content}
-            <Footer />
+            {content}  
         </Box>
     )
 }

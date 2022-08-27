@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Octokit } from "octokit";
-import { Typography } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 
 export default function Footer() {
 
@@ -19,7 +19,7 @@ export default function Footer() {
       });
     
     const versionFooter = (version: string | null) => {
-        const versionString = version ? version : "Loading..."
+        const versionString = version ? version.slice(-8) : "Loading..."
         
         return (
             <Typography variant="caption">
@@ -30,9 +30,9 @@ export default function Footer() {
 
     const footer = () => {
         return(
-            <div>
+            <Grid justifyContent='space-between' style={{color: "grey"}}>
                 {versionFooter(version)}
-            </div>
+            </Grid>
         )
     }
     
