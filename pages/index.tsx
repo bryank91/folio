@@ -1,9 +1,9 @@
 import * as React from 'react'
 import ContentContainer from '../components/content/container';
-import { Grid, Box, Paper, Typography} from '@mui/material';
+import { Grid, Paper, Typography} from '@mui/material';
 import { styled } from '@mui/material/styles';
-import pixelArt from '../images/pixelart.png'
 import Image from 'next/image'
+import PixelArt from "../public/images/pixelart.png"
 
 export default function Home() {
 
@@ -24,7 +24,7 @@ export default function Home() {
   const ImageBox = () => {
     return(
       <Image layout="intrinsic" style={{ textAlign: 'center' }}
-        src={pixelArt}
+        src={PixelArt}
       />
     );
   }
