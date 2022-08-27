@@ -32,15 +32,15 @@ export default function Home() {
   const content = () => {
     return(
     <Grid container>
-      <Grid xs={12}>
+      <Grid item={true} xs={12}>
         <CustomizedTitle>
           <Typography variant="h2">KHOO.dev</Typography>
         </CustomizedTitle>
       </Grid>
-      <Grid xs={12} display="flex" justifyContent="center" alignItems="center">
+      <Grid item={true} xs={12} display="flex" justifyContent="center" alignItems="center">
         <ImageBox />
       </Grid>
-      <Grid xs={12}>
+      <Grid item={true} xs={12}>
         <CustomizedContent>
           <Typography variant="h4">Experience Full Stack Developer</Typography>
           <Typography variant="subtitle1">In love with all things cloud and automation</Typography>

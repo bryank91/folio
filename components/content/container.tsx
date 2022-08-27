@@ -1,10 +1,11 @@
 import React from "react";
 import Box from '@mui/material/Box';
 import Header from "../header/header";
+import Footer from "../footer/footer";
 
 export default function ContentContainer({content} : any) {
     return (
-        <Box sx={{
+        <Box sx={{  
             backgroundColor: 'white', 
             height: '100vh', 
             display: 'flex',
@@ -15,6 +16,7 @@ export default function ContentContainer({content} : any) {
         }}>
             <Header />
             {content}
+            <Footer />
         </Box>
     )
 }

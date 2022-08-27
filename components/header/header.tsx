@@ -13,12 +13,12 @@ export default function Header() {
     const display = () => {
         return (    
             <Toolbar>
-            <Grid justifyContent='space-between' container>
-                <Grid>
+            <Grid justifyContent='space-between' container>    
+                <div>
                     {buttonLinks("home","/")}
                     {buttonLinks("portfolio","/portfolio")}
-                    {buttonLinks("contact","/contact")}        
-                </Grid>
+                    {buttonLinks("contact","/contact")}
+                </div>
             </Grid>
             </Toolbar>
         )
