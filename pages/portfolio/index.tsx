@@ -14,33 +14,30 @@ const Item = styled(Paper)(({ theme }) => ({
   }));
 
 const content = () => {
-    return (
-    <Box sx={{ flexGrow: 1 , height: '200vh', bgcolor: '#cfe8fc', paddingTop: "5em"}}>        
-        <Grid container>
-          <Grid xs={12}>  
-            <Item>
-                Item 1
-            </Item>   
-          </Grid>
-          <Grid xs={12}>  
-            <Item>
-                Item 2
-            </Item>       
-          </Grid>
-          <Grid xs={12}>  
-            <Item>
-                Item 3
-            </Item>       
-          </Grid>                    
+    return (     
+      <Grid container>
+        <Grid xs={12}>  
+          <Item>
+              Item 1
+          </Item>   
         </Grid>
-      </Box>
+        <Grid xs={12}>  
+          <Item>
+              Item 2
+          </Item>       
+        </Grid>
+        <Grid xs={12}>  
+          <Item>
+              Item 3
+          </Item>       
+        </Grid>                    
+      </Grid>
     )
 }
 
 export default function Home() {
     return (
         <div>
-            <Header />
             <ContentContainer content={content()} />
         </div>
       ); 

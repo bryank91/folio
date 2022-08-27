@@ -1,61 +1,57 @@
 import * as React from 'react'
-import Header from '../components/header/header'
 import ContentContainer from '../components/content/container';
-import { Grid, Box, Paper} from '@mui/material';
+import { Grid, Box, Paper, Typography} from '@mui/material';
 import { styled } from '@mui/material/styles';
+import pixelArt from '../images/pixelart.png'
+import Image from 'next/image'
 
 export default function Home() {
+
   const CustomizedTitle = styled(Paper) `
     background-color: #fff;
     text-align: center;
-    font-size: 200%
+    font-size: 200%;
+    box-shadow: none;
   `
 
   const CustomizedContent = styled(Paper)`
     background-color: #fff;
     text-align: center;
     font-size: large;
+    box-shadow: none;
   `
 
-  const content = () => {
+  const ImageBox = () => {
     return(
-    <Box sx={{ flexGrow: 1 , height: '200vh', bgcolor: '#fff', paddingTop: "5em"}}>
-      <Grid container>
-        <Grid xs={12}>
-          <CustomizedTitle>Khoo.dev</CustomizedTitle>
-        </Grid>
-        <Grid xs={12} paddingTop='150px'>
-        <CustomizedContent>
-          <p>Experience Full Stack Developer</p>
-          <p>In love with all things cloud and automation</p>
-        </CustomizedContent>
-        </Grid>
-      </Grid>
-    </Box>
+      <Image layout="intrinsic" style={{ textAlign: 'center' }}
+        src={pixelArt}
+      />
     );
   }
 
-  const portfolio = () => {
+  const content = () => {
     return(
-    <Box sx={{ flexGrow: 1 , height: '200vh', bgcolor: '#fff', paddingTop: "5em"}}>
-      <Grid container>
-        <Grid xs={12}>
-          <CustomizedTitle>Khoo.dev</CustomizedTitle>
-        </Grid>
-        <Grid xs={12} paddingTop='150px'>
-        <CustomizedContent>
-          <p>Experience Full Stack Developer</p>
-          <p>In love with all things cloud and automation</p>
-        </CustomizedContent>
-        </Grid>
+    <Grid container>
+      <Grid xs={12}>
+        <CustomizedTitle>
+          <Typography variant="h2">KHOO.dev</Typography>
+        </CustomizedTitle>
       </Grid>
-    </Box>
+      <Grid xs={12} display="flex" justifyContent="center" alignItems="center">
+        <ImageBox />
+      </Grid>
+      <Grid xs={12}>
+        <CustomizedContent>
+          <Typography variant="h4">Experience Full Stack Developer</Typography>
+          <Typography variant="subtitle1">In love with all things cloud and automation</Typography>
+        </CustomizedContent>
+      </Grid>
+    </Grid>
     );
   }
 
   return (
     <div>
-      <Header />
       <ContentContainer content={content()}/>
     </div>
   )

@@ -1,8 +1,8 @@
-import { AppBar, Toolbar, Typography, Button, Grid } from "@mui/material";
+import { Toolbar, Button, Grid } from "@mui/material";
 import React from "react";
 
 export default function Header() {
-    const buttonLinks = (name : any, link : any) => {
+    const buttonLinks = (name : string, link : string) => {
         return(
             <Button color="inherit" href={link}>
                 {name}
@@ -14,25 +14,18 @@ export default function Header() {
         return (    
             <Toolbar>
             <Grid justifyContent='space-between' container>
-            <Grid>
-                <Typography>
-                    Khooo.dev
-                </Typography>
-            </Grid>
-            <Grid>
-                {buttonLinks("home","/")}
-                {buttonLinks("portfolio","/portfolio")}
-                {buttonLinks("contact","/contact")}        
-            </Grid>
+                <Grid>
+                    {buttonLinks("home","/")}
+                    {buttonLinks("portfolio","/portfolio")}
+                    {buttonLinks("contact","/contact")}        
+                </Grid>
             </Grid>
             </Toolbar>
         )
     }
 
     return (
-        <header>
-            <AppBar>{display()}</AppBar>
-        </header>
+        display()
     )
 }
 
