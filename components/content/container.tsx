@@ -16,7 +16,7 @@ export function MainContainer({children} : any) {
 export function ContentContainer({content} : any) {
 
     const BoxContent = styled(Box)`
-        background-color: white; 
+        background-color: #141630; 
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -49,6 +49,15 @@ export function SplitContentContainer() {
 
     return (        
         <Grid sx={{ flexGrow: 1 }} container spacing={2}>
+            <Grid item xs={4}>
+                {portfolio()}
+            </Grid>
+            <Grid item xs={4}>
+                {portfolio()}
+            </Grid>
+            <Grid item xs={4}>
+                {portfolio()}
+            </Grid>
             <Grid item xs={4}>
                 {portfolio()}
             </Grid>

@@ -1,34 +1,35 @@
 import * as React from 'react'
 import { ContentContainer, SplitContentContainer, MainContainer } from '../components/content/container';
-import Porfolio from '../components/content/portfolio';
 import { Grid, Typography, Card} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image'
-import PixelArt from "../public/images/pixelart.png"
+import PixelArt from "../public/images/neon_room.jpg"
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 
 export default function Home() {
 
   const CustomizedTitle = styled(Card) `
-    background-color: #fff;
+    background-color: #141630;
     text-align: center;
     font-size: 200%;
     box-shadow: none;
-    border: 1px solid lightGrey;
+    color: white;
+    padding-top: 25px;
   `
 
   const CustomizedContent = styled(Card)`
-    background-color: #fff;
+    background-color: #141630;
     text-align: center;
     font-size: large;
     box-shadow: none;
+    color: white;
   `
 
   const ImageBox = () => {
     return(
       <Image layout="intrinsic" style={{ textAlign: 'center' }}
-        src={PixelArt}
+        src={PixelArt} width={500} height={500}
       />
     );
   }
@@ -50,7 +51,7 @@ export default function Home() {
           <Typography variant="subtitle1">In love with all things cloud and automation</Typography>
         </CustomizedContent>
         <CustomizedContent>
-        <Typography variant="subtitle2" style={{border: "1px solid lightGrey"}}>
+        <Typography variant="subtitle2" sx={{paddingTop: '25px'}}>
             Industry experience in delivering enterprise and start up solutions <br />
             Agile advocate <br />
             Proficient in AWS and Azure <br />
