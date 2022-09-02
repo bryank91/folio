@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ContentContainer from '../components/content/container';
+import { ContentContainer, SplitContentContainer, MainContainer } from '../components/content/container';
 import Porfolio from '../components/content/portfolio';
 import { Grid, Typography, Card} from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -15,6 +15,7 @@ export default function Home() {
     text-align: center;
     font-size: 200%;
     box-shadow: none;
+    border: 1px solid lightGrey;
   `
 
   const CustomizedContent = styled(Card)`
@@ -36,7 +37,7 @@ export default function Home() {
     return(
     <Grid container sx={{paddingTop: "35px"}}>
       <Grid item={true} xs={12}>
-        <CustomizedTitle style={{border: "1px solid lightGrey"}}>
+        <CustomizedTitle>
           <Typography variant="h2">KHOO.dev</Typography>
         </CustomizedTitle>
       </Grid>
@@ -60,29 +61,12 @@ export default function Home() {
     );
   }
 
-  const portfolio = {
-      name: "Flippy",
-      description: "Flippy",
-      shorthand: "Flippy",
-      url: "Flippy"
-  }
-
-  const portfolio1 = () => {
-    return (
-      <div>
-        <Porfolio data={portfolio} />
-        <Porfolio data={portfolio} />
-        <Porfolio data={portfolio} />
-      </div>
-    )
-  }
-
   return (
-    <div>
+    <MainContainer>
       <Header />
       <ContentContainer content={about()} />
-      <ContentContainer content={portfolio1()} />  
+      <ContentContainer content={<SplitContentContainer />}/>
       <ContentContainer content={<Footer />}/>
-    </div>
+    </MainContainer>
   )
 }
