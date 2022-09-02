@@ -6,6 +6,7 @@ import Image from 'next/image'
 import PixelArt from "../public/images/neon_room.jpg"
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
+import { GithubProjects } from '../types/project';
 
 export default function Home() {
 
@@ -62,11 +63,24 @@ export default function Home() {
     );
   }
 
+  const currentPorfolio : GithubProjects = [{
+    "name": "flippy",
+    "shorthand": "flip",
+    "description": "flippy is about a bird game",
+    "url": "https://flippy.com"
+  },
+  {
+    "name": "flippy",
+    "shorthand": "flip",
+    "description": "flippy is about a bird game",
+    "url": "https://flippy.com" 
+  }];
+
   return (
     <MainContainer>
       <Header />
       <ContentContainer content={about()} />
-      <ContentContainer content={<SplitContentContainer />}/>
+      <ContentContainer content={<SplitContentContainer GithubProjects={currentPorfolio}/>}/>
       <ContentContainer content={<Footer />}/>
     </MainContainer>
   )

@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import Porfolio from "./portfolio";
 import { Container } from "@mui/system";
 import { styled } from '@mui/material/styles';
+import { GithubProject, GithubProjects, TypeGithubProjects } from "../../types/project";
 
 export function MainContainer({children} : any) {
     return (
@@ -30,43 +31,27 @@ export function ContentContainer({content} : any) {
     )
 }
 
-export function SplitContentContainer() {
-
-    const flippy = {
-        name: "Flippy",
-        description: "Flippy",
-        shorthand: "Flippy",
-        url: "Flippy"
-    }
+export function SplitContentContainer({GithubProjects} : TypeGithubProjects) {
   
-    const portfolio = () => {
+    const portfolio = (item : GithubProject) => {
       return (
         <div style={{paddingTop: "35px"}}>
-          <Porfolio data={flippy} />
+          <Porfolio data={item} />
         </div>
       )
     }
 
     return (        
         <Grid sx={{ flexGrow: 1 }} container spacing={2}>
-            <Grid item xs={4}>
-                {portfolio()}
-            </Grid>
-            <Grid item xs={4}>
-                {portfolio()}
-            </Grid>
-            <Grid item xs={4}>
-                {portfolio()}
-            </Grid>
-            <Grid item xs={4}>
-                {portfolio()}
-            </Grid>
-            <Grid item xs={4}>
-                {portfolio()}
-            </Grid>
-            <Grid item xs={4}>
-                {portfolio()}
-            </Grid>
+            {
+                GithubProjects.map((item : GithubProject) => {
+                    return (
+                        <Grid item xs={4}>
+                            {portfolio(item)}
+                        </Grid>
+                    )
+                })
+            }
         </Grid>
     )
 }
