@@ -26,9 +26,9 @@ export default function Header() {
             <HeaderContainer>
                 <Grid justifyContent='space-between' container >    
                     <HeaderDiv>
-                        {buttonLinks("home","/")}
-                        {buttonLinks("portfolio","/portfolio")}
-                        {buttonLinks("contact","/contact")}
+                        {buttonLinks("About","#about")}
+                        {buttonLinks("Portfolio","#portfolio")}
+                        {buttonLinks("Contact","#contact")}
                     </HeaderDiv>
                 </Grid>
             </HeaderContainer>
