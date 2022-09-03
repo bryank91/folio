@@ -7,7 +7,7 @@ export default function Footer() {
     const [version, setVersion] = useState<string | null>(null);
 
     const octokit = new Octokit({
-        auth: process.env.GITHUB_TOKEN
+        auth: process.env.TOKEN
     })
 
     octokit.request("GET /repos/{owner}/{repo}/commits", {
