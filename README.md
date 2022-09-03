@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FOLIO
 
-## Getting Started
+A basic Next.JS, TypeScript, React and Server Side Rendering (SSR) application.
+The beauty is the used of APIs during build and serving the application as a static web site. The website is not meant to be reusable but explore the steps of building a low cost running static website.
 
-First, run the development server:
+## Setting Up
+1. Look at `.env.local.example` for an example of environment variables to set up
+2. These are the things to specify:
 
 ```bash
-npm run dev
-# or
-yarn dev
+TOKEN= /* github token. Generate through Github -> Settings -> Developer -> PAT */
+DEPLOYMENT = /* static - host a SSR style website */ 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
+Run the development server with
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Testing Deployment
+Run the `next build && next export` command
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+npm run build
+```
 
-## Learn More
+This will build the items on server side to be served as a static website without a node server
 
-To learn more about Next.js, take a look at the following resources:
+## Deploying on Azure Static Website
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Follow the guide here: https://docs.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs
+- You will not need to pull the example next.js app
+- To setup custom domains, purchase a domain and follow the guide here: https://docs.microsoft.com/en-us/azure/static-web-apps/apex-domain-external
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Notes
+- `getStaticProps()` allows for SSR to happen. This is where we acquire the data from API during build. https://nextjs.org/docs/basic-features/data-fetching/get-static-props
+- `.github/azure-static-website.yml` is where the actions are stored. this is the based Azure Static Web yaml file provided with environment variables imported
+- `/pages` is how next.js handles routing
