@@ -7,8 +7,17 @@ import PixelArt from "../public/images/neon_room.jpg"
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 import { GithubProjects } from '../types/project';
+import { createTheme, ThemeProvider } from '@mui/material';
+import "@fontsource/prompt"
 
 export default function Home() {
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'prompt'
+    }
+    
+  })
 
   const CustomizedTitle = styled(Card) `
     background-color: #141630;
@@ -29,7 +38,7 @@ export default function Home() {
 
   const ImageBox = () => {
     return(
-      <Image layout="intrinsic" style={{ textAlign: 'center' }}
+      <Image layout="intrinsic" alt='khoocodes photo' style={{ textAlign: 'center' }}
         src={PixelArt} width={500} height={500}
       />
     );
@@ -40,7 +49,9 @@ export default function Home() {
     <Grid container sx={{paddingTop: "35px"}}>
       <Grid item={true} xs={12}>
         <CustomizedTitle>
-          <Typography variant="h2">KHOO.dev</Typography>
+          <ThemeProvider theme={theme}>
+            <Typography variant="h2">khoo.codes</Typography>
+          </ThemeProvider>
         </CustomizedTitle>
       </Grid>
       <Grid item={true} xs={12} display="flex" justifyContent="center" alignItems="center">
@@ -73,8 +84,15 @@ export default function Home() {
     "name": "flippy",
     "shorthand": "flip",
     "description": "flippy is about a bird game",
-    "url": "https://flippy.com" 
-  }];
+    "url": "https://flippy.com"
+  },
+  {
+    "name": "flippy",
+    "shorthand": "flip",
+    "description": "flippy is about a bird game",
+    "url": "https://flippy.com"
+  }
+  ];
 
   return (
     <MainContainer>
