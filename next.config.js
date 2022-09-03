@@ -4,7 +4,8 @@ const nextConfig = {
   swcMinify: true,
   env: {
     TOKEN: process.env.TOKEN,
-    DEPLOYMENT: process.env.DEPLOYMENT
+    DEPLOYMENT: process.env.DEPLOYMENT,
+    USER_PROFILE: process.env.USER_PROFILE
   },
   trailingSlash: true
 }

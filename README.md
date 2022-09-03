@@ -9,7 +9,8 @@ The beauty is the used of APIs during build and serving the application as a sta
 
 ```bash
 TOKEN= /* github token. Generate through Github -> Settings -> Developer -> PAT */
-DEPLOYMENT = /* static - host a SSR style website */ 
+DEPLOYMENT = /* static - host a SSR style website */
+USER_PROFILE = /* user profile of github */
 ```
 
 ## Development

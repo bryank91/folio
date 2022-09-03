@@ -24,6 +24,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN }}
           DEPLOYMENT: ${{ secrets.DEPLOYMENT }}
+          USER_PROFILE: ${{ secrets.USER_PROFILE }}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_FLOWER_0C1407B00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
