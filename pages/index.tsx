@@ -58,7 +58,7 @@ export async function getStaticProps() {
     })
 
     const req = await octokit.request("GET /repos/{owner}/{repo}/commits", {
-        owner: "bryank91",
+        owner: process.env.USER_PROFILE!, /* you require to provide an user profile */
         repo: "folio",
     })
 
