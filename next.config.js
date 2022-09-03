@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+    TOKEN: process.env.TOKEN,
     DEPLOYMENT: process.env.DEPLOYMENT
   },
   trailingSlash: true
