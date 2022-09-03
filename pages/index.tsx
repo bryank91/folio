@@ -32,9 +32,7 @@ export default function Home( {data} : any ) {
   ];
 
   function footerRender () {
-    let render = (process.env.DEPLOYMENT != 'static')
-    ? <Footer />
-    : <StaticFooter commit={ data }/>
+    let render = <StaticFooter commit={ data }/>
 
     return render
   }
