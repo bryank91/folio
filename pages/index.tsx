@@ -2,8 +2,6 @@ import * as React from 'react'
 import { ContentContainer, SplitContentContainer, MainContainer } from '../components/content/container';
 import { Grid, Typography, Card} from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Image from 'next/image'
-import PixelArt from "../public/images/neon_room.jpg"
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 import { GithubProjects } from '../types/project';
@@ -36,11 +34,20 @@ export default function Home() {
     color: white;
   `
 
+  const MainImage = styled('img')`
+    text-align: center;
+    width: 500px;
+    height: 500px;
+  `
+
   const ImageBox = () => {
     return(
+      /*
       <Image layout="intrinsic" alt='khoocodes photo' style={{ textAlign: 'center' }}
-        src={PixelArt} width={500} height={500}
+        src="/neon_room.jpg" width={500} height={500}
       />
+      */
+     <MainImage src="neon_room.jpg" alt="khoocodes" />
     );
   }
 
@@ -94,12 +101,20 @@ export default function Home() {
   }
   ];
 
+  const footerRender = () => {
+    let render = (process.env.DEPLOYMENT != 'static')
+    ? <Footer />
+    : "" 
+
+    return render
+  }
+
   return (
     <MainContainer>
       <Header />
       <ContentContainer content={about()} />
       <ContentContainer content={<SplitContentContainer GithubProjects={currentPorfolio}/>}/>
-      <ContentContainer content={<Footer />}/>
+      <ContentContainer content={footerRender()}/>
     </MainContainer>
   )
 }

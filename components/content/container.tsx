@@ -35,8 +35,7 @@ export function SplitContentContainer({GithubProjects} : TypeGithubProjects) {
   
     const GridContainer = styled(Grid)`
         flex-grow: 1;
-        padding-left: 25px;
-        padding-right: 25px;
+        padding: 25px
     `
 
     const portfolio = (item : GithubProject) => {
