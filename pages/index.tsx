@@ -50,22 +50,32 @@ export default function Home( {data} : any ) {
   )
 }
 
+
 export async function getStaticProps() {
-  const octokit = new Octokit({
-      auth: process.env.GITHUB_TOKEN
-  })
+  try {
+    const octokit = new Octokit({
+        auth: process.env.GITHUB_TOKEN
+    })
 
-  const req = await octokit.request("GET /repos/{owner}/{repo}/commits", {
-      owner: "bryank91",
-      repo: "folio",
-  })
+    const req = await octokit.request("GET /repos/{owner}/{repo}/commits", {
+        owner: "bryank91",
+        repo: "folio",
+    })
 
-  const data = req.data[0].sha
+    const data = req.data[0].sha
 
-  return {
+    return {
+        props: {
+            data
+        },
+    }
+  } catch (e) {
+    console.error(e);
+    return {
       props: {
-          data
-      },
+        data: "abc1234"
+      }
+    }
   }
 
 }
