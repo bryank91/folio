@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import Porfolio from "./portfolio";
 import { Container } from "@mui/system";
 import { styled } from '@mui/material/styles';
-import { GithubProject, GithubProjects, TypeGithubProjects } from "../../types/project";
+import { GithubProject, TypeGithubProjects } from "../../types/project";
 
 export function MainContainer({children} : any) {
     return (
@@ -33,6 +33,11 @@ export function ContentContainer({content} : any) {
 
 export function SplitContentContainer({GithubProjects} : TypeGithubProjects) {
   
+    const GridContainer = styled(Grid)`
+        flex-grow: 1;
+        padding: 25px
+    `
+
     const portfolio = (item : GithubProject) => {
       return (
         <div style={{paddingTop: "35px"}}>
@@ -42,16 +47,16 @@ export function SplitContentContainer({GithubProjects} : TypeGithubProjects) {
     }
 
     return (        
-        <Grid sx={{ flexGrow: 1 }} container spacing={2}>
+        <GridContainer container spacing={2}>
             {
-                GithubProjects.map((item : GithubProject) => {
+                GithubProjects.map((item : GithubProject, index) => {
                     return (
-                        <Grid item xs={4}>
+                        <Grid item={true} key={'item-' + index} xs={4}>
                             {portfolio(item)}
                         </Grid>
                     )
                 })
             }
-        </Grid>
+        </GridContainer>
     )
 }

@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, CardContent, CardActions, Button} from '@mui/material';
+import { Typography, Card, CardContent, CardActions, Button} from '@mui/material';
 import * as React from 'react'
 import { Project } from '../../types/project';
 

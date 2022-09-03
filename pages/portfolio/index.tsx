@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid';
-import ContentContainer from '../../components/content/container';
+import { ContentContainer } from '../../components/content/container';
 import { Typography } from '@mui/material';
 
 const content = () => {
