@@ -31,7 +31,7 @@ export function ContentContainer({content} : any) {
     )
 }
 
-export function SplitContentContainer({GithubProjects} : TypeGithubProjects) {
+export function PortfolioContainer({GithubProjects} : TypeGithubProjects) {
   
     const GridContainer = styled(Grid)`
         flex-grow: 1;
@@ -47,7 +47,7 @@ export function SplitContentContainer({GithubProjects} : TypeGithubProjects) {
     }
 
     return (        
-        <GridContainer container spacing={2}>
+        <GridContainer id="portfolio" container spacing={2}>
             {
                 GithubProjects.map((item : GithubProject, index) => {
                     return (
