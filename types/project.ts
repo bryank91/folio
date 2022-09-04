@@ -1,21 +1,23 @@
 export interface Project {
     data: {
-        name: string;
-        shorthand?: string;
-        description?: string;
-        url?: string;
+        name: string | null 
+        description?: string | null
+        url?: string | null
+        updated?: string | null
+        language?: string | null
     }
 }
 
 export interface GithubProject {
-    name: string;
-    shorthand?: string;
-    description?: string;
-    url?: string;
+    name: string | null   
+    description?: string | null
+    url?: string | null
+    updated?: string | null
+    language?: string | null
 }
 
 export type GithubProjects = Array<GithubProject>
 
 export interface TypeGithubProjects {
-    GithubProjects: GithubProjects;
+    GithubProjects: GithubProjects
 }

@@ -11,6 +11,7 @@ The beauty is the used of APIs during build and serving the application as a sta
 TOKEN= /* github token. Generate through Github -> Settings -> Developer -> PAT */
 DEPLOYMENT = /* static - host a SSR style website */
 USER_PROFILE = /* user profile of github */
+PROJECTS = /* projects you would like to filter comma separated eg. PRG1, PRO2 */
 ```
 
 ## Development
