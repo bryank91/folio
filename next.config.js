@@ -5,7 +5,8 @@ const nextConfig = {
   env: {
     TOKEN: process.env.TOKEN,
     DEPLOYMENT: process.env.DEPLOYMENT,
-    USER_PROFILE: process.env.USER_PROFILE
+    USER_PROFILE: process.env.USER_PROFILE,
+    PROJECTS: process.env.PROJECTS
   },
   trailingSlash: true
 }
