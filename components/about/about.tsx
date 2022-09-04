@@ -28,12 +28,7 @@ const CustomizedContent = styled(Card)`
 
 const ImageBox = () => {
     return(
-    /*
-    <Image layout="intrinsic" alt='khoocodes photo' style={{ textAlign: 'center' }}
-        src="/neon_room.jpg" width={500} height={500}
-    />
-    */
-    <MainImage src="neon_room.jpg" alt="khoocodes" />
+      <MainImage src="neon_room.jpg" alt="khoocodes" />
     );
 }
 
