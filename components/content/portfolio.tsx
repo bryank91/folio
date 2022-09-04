@@ -15,6 +15,9 @@ export default function Porfolio({data} : Project) {
         text-overflow: ellipsis;
         overflow: hidden;
     `
+
+    const date = new Date(data.updated!)
+    const prettyDate = date.toISOString().substring(0, 10)
     
     const portfolio = () => {
         return(
@@ -26,8 +29,11 @@ export default function Porfolio({data} : Project) {
                     <DescriptionTypography variant="body2" color="text.secondary">
                     {data.description}
                     </DescriptionTypography>
+                    <Typography variant="caption">
+                    {data.language}
+                    </Typography>
                     <Typography variant="body2">
-                    {data.updated}
+                    Last updated: {prettyDate}
                     </Typography>
                 </CardContent>
                 <CardActions>
