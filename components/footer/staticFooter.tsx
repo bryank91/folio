@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Grid } from "@mui/material";
 
-function StaticFooter({ commit } : any) {
+function StaticFooter({ commit } : Record<string, string | null>) {
     
     const versionFooter = (version: string | null) => {
         const versionString = version ? version.slice(-8) : "Loading..."

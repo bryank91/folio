@@ -6,7 +6,7 @@ import { Container } from "@mui/system";
 import { styled } from '@mui/material/styles';
 import { GithubProject, TypeGithubProjects } from "../../types/project";
 
-export function MainContainer({children} : any) {
+export function MainContainer({children} : Record<string, React.ReactNode>) {
     return (
         <Container maxWidth="md">
             {children}
@@ -14,7 +14,7 @@ export function MainContainer({children} : any) {
     )
 }
 
-export function ContentContainer({content} : any) {
+export function ContentContainer({content} : Record<string, React.ReactNode>) {
 
     const BoxContent = styled(Box)`
         background-color: #141630; 
