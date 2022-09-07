@@ -3,10 +3,16 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import "@fontsource/prompt";
 
-const MainImage = styled('img')`
+const BigMainImage = styled('img')`
     text-align: center;
     width: 500px;
     height: 500px;
+`
+
+const SmallMainImage = styled('img')`
+    text-align: center;
+    width: 200px;
+    height: 200px;
 `
 
 const CustomizedTitle = styled(Card) `
@@ -28,7 +34,14 @@ const CustomizedContent = styled(Card)`
 
 const ImageBox = () => {
     return(
-      <MainImage src="neon_room.jpg" alt="khoocodes" />
+      <div>
+        <BigMainImage src="neon_room.jpg" alt="khoocodes" 
+          	sx={{ display: { xs: 'none', sm: 'block' } }}
+        />
+        <SmallMainImage src="neon_room.jpg" alt="khoocodes"             	
+            sx={{ display: { xs: 'block', sm: 'none' } }}
+        />
+      </div>
     );
 }
 
