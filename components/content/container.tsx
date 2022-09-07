@@ -46,17 +46,37 @@ export function PortfolioContainer({GithubProjects} : TypeGithubProjects) {
       )
     }
 
+    const GitHubProjectsSmall = () => {
+        return (
+            GithubProjects.map((item : GithubProject, index) => {
+                return (
+                        <Grid item={true} key={'item-' + index} xs={12}
+                              sx={{ display: { xs: 'block', sm: 'none' } }}
+                        >
+                            {portfolio(item)}
+                        </Grid>                        
+                )
+            })
+        )};
+
+    const GitHubProjectsBig = () => {
+        return (
+            GithubProjects.map((item : GithubProject, index) => {
+                return (
+                        <Grid item={true} key={'item-' + index} xs={4}
+                              sx={{ display: { xs: 'none', sm: 'block' } }}
+                        >
+                            {portfolio(item)}
+                        </Grid>                        
+                )
+            })
+    )};
+
+
     return (        
         <GridContainer id="portfolio" container spacing={2}>
-            {
-                GithubProjects.map((item : GithubProject, index) => {
-                    return (
-                        <Grid item={true} key={'item-' + index} xs={4}>
-                            {portfolio(item)}
-                        </Grid>
-                    )
-                })
-            }
+            { GitHubProjectsBig() }
+            { GitHubProjectsSmall() }
         </GridContainer>
     )
 }
